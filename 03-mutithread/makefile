@@ -8,7 +8,7 @@ CXXFLAGS = -std=c++11 -Wall
 TARGET = myprogram
 
 # 源文件（自动查找当前目录下的 .cpp 文件）
-SOURCES = 3-foreach-sort.cpp
+SOURCES = 1-start-thread.cpp
 
 # 默认目标
 all: $(TARGET)
