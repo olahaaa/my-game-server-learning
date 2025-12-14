@@ -33,8 +33,8 @@ class thread_guard{
     std::thread& t;
 public:
     explicit thread_guard(std::thread& t_):t(t_){}
-    thread_guard(const thread_guard &) = delete;
-    thread_guard operator= (const thread_guard &) = delete;
+    thread_guard(const thread_guard &) = delete; //拷贝构造是产生一个新对象，所以返回新的实例
+    thread_guard& operator= (const thread_guard &) = delete; //赋值运算符是修改已存在的实例，所以返回引用
 
     ~thread_guard(){    //将join放在析构函数中，这样当对象被销毁前就能join操作
         if(t.joinable()) //每个线程只能join一次，先用joinable检查能否join；detach也用这个检查
